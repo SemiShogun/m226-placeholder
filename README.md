@@ -1,0 +1,1 @@
+![Dankula](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F1F144xim8YdMMv4NXBZ5N5RjTUA%3D%2F0x0%3A722x800%2F1200x0%2Ffilters%3Afocal(0x0%3A722x800)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F10838093%2FLUL.jpg&f=1&nofb=1)
