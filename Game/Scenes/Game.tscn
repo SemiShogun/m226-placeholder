@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/MainCharIdle.png" type="Texture" id=1]
+[ext_resource path="res://Engine/Character.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.625, 39.625 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.875, 12.375 )
+
+[node name="Game" type="Node2D"]
+
+[node name="Character" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Character"]
+position = Vector2( 56.5, 44.375 )
+scale = Vector2( 2.74611, 2.79313 )
+texture = ExtResource( 1 )
+hframes = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2( 56.875, 49.875 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 146.25, 77 )
+shape = SubResource( 2 )
