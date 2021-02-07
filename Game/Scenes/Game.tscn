@@ -1,13 +1,42 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/MainCharIdle.png" type="Texture" id=1]
 [ext_resource path="res://Engine/Character.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.625, 39.625 )
+extents = Vector2( 24.75, 39.625 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 17.875, 12.375 )
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1, 6 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5, 15 ]
+}
 
 [node name="Game" type="Node2D"]
 
@@ -19,13 +48,12 @@ position = Vector2( 56.5, 44.375 )
 scale = Vector2( 2.74611, 2.79313 )
 texture = ExtResource( 1 )
 hframes = 16
+frame = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 56.875, 49.875 )
+position = Vector2( 56.5, 50.125 )
 shape = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 146.25, 77 )
-shape = SubResource( 2 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character"]
+anims/idle = SubResource( 2 )
+anims/move = SubResource( 3 )
